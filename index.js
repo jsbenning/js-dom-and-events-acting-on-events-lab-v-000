@@ -4,4 +4,33 @@ function preventRefreshOnSubmit(){
     })
 }
 
-preventRefreshOnSubmit()
+
+function retrieveEmployeeInformation(){
+  let myInput = document.querySelector('input').value;
+  return myInput;
+}
+
+function addNewElementAsLi(){
+  let myList = document.querySelector('.employee-list');
+  let li = document.createElement("li");
+
+  li.appendChild(document.createTextNode(retrieveEmployeeInformation()));
+  myList.appendChild(li);
+}
+
+function addNewLiOnClick(){
+  let adder = document.querySelectorAll("input[value='Add Employee']");
+  adder.onclick = addNewElementAsLi();
+  document.querySelector('input').value = "";
+}
+
+function clearEmployeeListOnLinkClick(){
+  let links = document.getElementsByTagName('a');
+  links[0].onclick = function(){
+    links[0].innerHTML = "";
+  };
+}
+
+preventRefreshOnSubmit();
+
+// http://174.138.35.1.3:45629
