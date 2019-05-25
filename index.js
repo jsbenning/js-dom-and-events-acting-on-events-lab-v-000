@@ -26,6 +26,7 @@ function addNewLiOnClick(){
 
 function clearEmployeeListOnLinkClick(){
   let links = document.getElementsByTagName('a');
+  links[0].innerHTML = "Yassir!"
   // links[0].onclick = function(){
   //   links[0].innerHTML = "";
   // };
